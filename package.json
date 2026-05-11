@@ -1,9 +1,9 @@
 {
   "name": "n8n-nodes-apiconsultasdeveiculos",
   "version": "0.1.1",
-  "description": "Node para utilização da api.consultasdeveiculos dentro do n8n.",
+  "description": "n8n community node for the Datacube vehicle and records consultation API (api.consultasdeveiculos.com).",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/DataCube/n8n-nodes-apiconsultasdeveiculos#readme",
   "keywords": [
     "n8n-community-node-package"
   ],
@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@n8n/node-cli": "*",
+    "dotenv": "^17.4.2",
     "eslint": "9.32.0",
     "prettier": "3.6.2",
     "release-it": "^19.0.4",
@@ -49,8 +50,5 @@
   },
   "peerDependencies": {
     "n8n-workflow": "*"
-  },
-  "overrides": {
-    "change-case": "4.1.2"
   }
 }

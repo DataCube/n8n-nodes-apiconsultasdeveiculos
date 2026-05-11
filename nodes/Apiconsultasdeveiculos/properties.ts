@@ -11,7 +11,7 @@ export function buildProperties(): INodeProperties[] {
 	const properties: INodeProperties[] = [];
 
 	properties.push({
-		displayName: 'Categoria',
+		displayName: 'Category',
 		name: 'category',
 		type: 'options',
 		noDataExpression: true,

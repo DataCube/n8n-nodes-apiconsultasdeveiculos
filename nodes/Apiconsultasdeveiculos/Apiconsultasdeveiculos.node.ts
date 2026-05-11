@@ -19,7 +19,7 @@ export class Apiconsultasdeveiculos implements INodeType {
 		icon: { light: 'file:apiconsultasdeveiculos.svg', dark: 'file:apiconsultasdeveiculos.dark.svg' },
 		group: ['transform'],
 		version: 1,
-		description: 'Consulta veículos, CNH, cadastros e muito mais via API DataCube',
+		description: 'Query vehicles, driver\'s licenses, records, credit and more via the Datacube API',
 		defaults: { name: 'Consultas de Veículos' },
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
@@ -54,7 +54,7 @@ export class Apiconsultasdeveiculos implements INodeType {
 
 				const endpointDef = ENDPOINTS[category]?.find((e) => e.value === endpointValue);
 				if (!endpointDef) {
-					throw new NodeOperationError(this.getNode(), `Endpoint não encontrado: ${endpointValue}`, { itemIndex: i });
+					throw new NodeOperationError(this.getNode(), `Endpoint not found: ${endpointValue}`, { itemIndex: i });
 				}
 
 				const body: Record<string, string> = {};
