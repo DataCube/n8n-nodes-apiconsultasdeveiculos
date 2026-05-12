@@ -737,7 +737,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "National consultation - Simples V2",
+      name: "National consultation - Simple V2",
       value: "veiculos_informacoes_consulta_nacional_simples_v2",
       path: "/veiculos/informacao-simples-v2",
       description: "Vehicle consultation - National Simple V2",
@@ -1036,7 +1036,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       params: [
         {
           name: "codigo_fipe",
-          displayName: "Fipe code",
+          displayName: "FIPE Code",
           type: "string",
           required: true,
           placeholder: "XXXXXX-X"
@@ -2375,7 +2375,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Issuing CRLVe (MG) V2",
       value: "veiculos_documentos_emissao_de_crlve_mg_v2",
       path: "/veiculos/documentos-crlve-mg-v2",
-      description: "Issuing CRLVe (MG) V2 without CRV number",
+      description: "Issuing CRLVe (MG) V2 without CRV Number",
       params: [
         {
           name: "placa",
@@ -2444,14 +2444,14 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "num_crv",
-          displayName: "Num Crv",
+          displayName: "In a CRV",
           type: "string",
           required: true,
           placeholder: "XXXXXXXXXXXX"
         },
         {
           name: "cod_seg_crv",
-          displayName: "Cod Seg Crv",
+          displayName: "Cod Seg CRV",
           type: "string",
           required: true,
           placeholder: "XXXXXXXXXXX"
@@ -2804,28 +2804,28 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "veiculo[numero_crv]",
-          displayName: "Vehicle Number Crv",
+          displayName: "Vehicle CRV Number",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "veiculo[data_emissao_crv]",
-          displayName: "Vehicle Issue Date Crv",
+          displayName: "Vehicle CRV Issue Date",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "veiculo[n_via_crv]",
-          displayName: "Vehicle N Via Crv",
+          displayName: "Vehicle N Via CRV",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "veiculo[cod_seguranca_crv]",
-          displayName: "Vehicle Security Code Crv",
+          displayName: "Vehicle Security Code CRV",
           type: "string",
           required: true,
           placeholder: "XXXX"
@@ -2846,21 +2846,21 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "vendedor[documento]",
-          displayName: "Document seller",
+          displayName: "Seller Document",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "vendedor[cidade]",
-          displayName: "City Sales",
+          displayName: "Seller City",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "vendedor[uf]",
-          displayName: "UF salesperson",
+          displayName: "Seller UF",
           type: "string",
           required: true,
           placeholder: "XXXX"
@@ -2980,7 +2980,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "numero_crv",
-          displayName: "Crv number",
+          displayName: "CRV Number",
           type: "string",
           required: true,
           placeholder: "XXXX"
@@ -3058,10 +3058,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
   ],
   "CNH > Nacional": [
     {
-      name: "National Consultation - Simples",
+      name: "National Consultation - Simple",
       value: "cnh_nacional_consulta_nacional_simples",
       path: "/cnh/nacional-simples",
-      description: "National Consultation - Simples",
+      description: "National Consultation - Simple",
       params: [
         {
           name: "cnh",
@@ -3140,10 +3140,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "National Consultation - Simples V2",
+      name: "National Consultation - Simple V2",
       value: "cnh_nacional_consulta_nacional_simples_v2",
       path: "/cnh/nacional-simples-v2",
-      description: "**National Consultation - Simples V2**",
+      description: "**National Consultation - Simple V2**",
       params: [
         {
           name: "cpf",
@@ -3616,7 +3616,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       params: [
         {
           name: "numero_inmetro",
-          displayName: "Inmetro number",
+          displayName: "Inmetro Number",
           type: "string",
           required: true,
           placeholder: "XXXXXXXX"

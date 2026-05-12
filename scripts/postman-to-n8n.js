@@ -48,6 +48,12 @@ const ACRONYM_FIXES = [
   [/\bUid\b/g,              'UID'],
   [/\bApi\b/g,              'API'],
   [/\bId\b/g,               'ID'],
+  // Combined patterns must come before simple ones to avoid partial substitution
+  [/\bFipe\s+code\b/gi,        'FIPE Code'],
+  [/\bFipe\b/g,                'FIPE'],
+  [/\bCrv\s+number\b/gi,       'CRV Number'],
+  [/\bCrv\b/g,                 'CRV'],
+  [/\bInmetro\s+number\b/gi,   'Inmetro Number'],
 ];
 
 function fixAcronyms(str) {
@@ -84,8 +90,13 @@ const PT_FALLBACKS = [
   [/\bAtiva\b/g,        'Active'],
   // "Ate" without accent in title-case — safe in short label context
   [/\bAte\b/g,          'To'],
+  // Portuguese word with no English equivalent that DeepL may miss
+  [/\bSimples\b/g,      'Simple'],
   // Word-order normalisation: DeepL sometimes preserves Portuguese order
-  [/\bConsultation\s+CNH\s+Complete\b/g, 'Complete CNH Consultation'],
+  [/\bConsultation\s+CNH\s+Complete\b/g,  'Complete CNH Consultation'],
+  [/\bDocument\s+[Ss]eller\b/g,           'Seller Document'],
+  [/\bCity\s+[Ss]ales\b/g,               'Seller City'],
+  [/\bUF\s+[Ss]alesperson\b/gi,           'Seller UF'],
   // DeepL translation artefacts
   [/\bDangerous\s+Goods\s+Dangerous\b/g, 'Dangerous Goods'],
   // Proper nouns that must not be translated
