@@ -3,7 +3,8 @@
  * postman-to-n8n.js
  *
  * Converts a Postman collection to endpoints.ts for the n8n community node.
- * All user-facing strings (endpoint names, descriptions, category names) are
+ * All user-facing strings (endpoint names, descriptions, category names,
+ * parameter displayNames, parameter placeholders and descriptions) are
  * automatically translated to English via the DeepL API.
  *
  * Requirements:
@@ -57,12 +58,57 @@ function fixAcronyms(str) {
 }
 
 // ---------------------------------------------------------------------------
+// Post-translation sanitizer: catches Portuguese words that DeepL may return
+// untranslated (prepositions, short conjunctions, common adjectives).
+// Applied to every string after DeepL as a final safety net.
+// ---------------------------------------------------------------------------
+const PT_FALLBACKS = [
+  // Accented — unambiguously Portuguese
+  [/\bNúmero\b/g,       'Number'],
+  [/\bAté\b/g,          'Until'],
+  [/\bVeículo\b/g,      'Vehicle'],
+  [/\bVeículos\b/g,     'Vehicles'],
+  [/\bDébito\b/g,       'Debt'],
+  [/\bDébitos\b/g,      'Debts'],
+  [/\bProprietário\b/g, 'Owner'],
+  [/\bÓrgão\b/g,        'Agency'],
+  [/\bÓrgãos\b/g,       'Agencies'],
+  // Common Portuguese words not found in English
+  [/\bConsulta\b/g,     'Consultation'],
+  [/\bConsultas\b/g,    'Consultations'],
+  [/\bCompleta\b/g,     'Complete'],
+  [/\bCompleto\b/g,     'Complete'],
+  [/\bNacional\b/g,     'National'],
+  [/\bBaixar\b/g,       'Download'],
+  [/\bAtivo\b/g,        'Active'],
+  [/\bAtiva\b/g,        'Active'],
+  // "Ate" without accent in title-case — safe in short label context
+  [/\bAte\b/g,          'To'],
+  // Word-order normalisation: DeepL sometimes preserves Portuguese order
+  [/\bConsultation\s+CNH\s+Complete\b/g, 'Complete CNH Consultation'],
+  // DeepL translation artefacts
+  [/\bDangerous\s+Goods\s+Dangerous\b/g, 'Dangerous Goods'],
+  // Proper nouns that must not be translated
+  [/\bComplain\s+here\b/gi,              'Reclame Aqui'],
+];
+
+function sanitizeTranslation(str) {
+  if (!str) return str;
+  let result = str;
+  for (const [pattern, replacement] of PT_FALLBACKS) {
+    result = result.replace(pattern, replacement);
+  }
+  return result;
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function toDisplayName(key) {
   const result = key
     .replace(/[\[\]]/g, ' ')
     .replace(/_/g, ' ')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')  // split camelCase before capitalising
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/\b\w/g, c => c.toUpperCase());
@@ -84,6 +130,29 @@ function extractPath(url) {
 }
 
 // ---------------------------------------------------------------------------
+// Checks whether a string needs translation.
+// Skips: empty strings, pure placeholders (XX.XXX.XXX-XX), numeric-only, URLs.
+// ---------------------------------------------------------------------------
+function needsTranslation(str) {
+  if (!str || !str.trim()) return false;
+  // Pure uppercase placeholders like "XXX.XXX.XXX-XX" or "XXXXXXXXX"
+  if (/^[X0-9.\-\/\s]+$/.test(str)) return false;
+  // URLs
+  if (/^https?:\/\//i.test(str)) return false;
+  // Numbers only
+  if (/^\d+$/.test(str)) return false;
+  return true;
+}
+
+// Normalise placeholder: replace Brazilian example domains with generic ones
+function normalisePlaceholder(str) {
+  if (!str) return str;
+  return str
+    .replace(/https?:\/\/exemplo\.com\.br[^\s]*/gi, 'https://example.com/webhook')
+    .replace(/https?:\/\/[a-z0-9.-]*\.com\.br[^\s]*/gi, 'https://example.com/webhook');
+}
+
+// ---------------------------------------------------------------------------
 // DeepL batch translation
 // Sends all strings in one request; returns translated strings in same order.
 // ---------------------------------------------------------------------------
@@ -93,7 +162,6 @@ function deeplTranslate(texts) {
     return Promise.resolve(texts);
   }
 
-  // DeepL accepts repeated `text` params
   const params = new URLSearchParams();
   params.append('target_lang', 'EN');
   params.append('source_lang', 'PT');
@@ -115,14 +183,13 @@ function deeplTranslate(texts) {
     },
   };
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const req = https.request(options, (res) => {
       let raw = '';
       res.on('data', chunk => (raw += chunk));
       res.on('end', () => {
         if (res.statusCode !== 200) {
           console.error(`[DeepL] HTTP ${res.statusCode}: ${raw}`);
-          // Fall back to original strings rather than crashing the build
           return resolve(texts);
         }
         try {
@@ -136,7 +203,7 @@ function deeplTranslate(texts) {
     });
     req.on('error', (e) => {
       console.error('[DeepL] Request error:', e.message);
-      resolve(texts); // graceful fallback
+      resolve(texts);
     });
     req.write(body);
     req.end();
@@ -165,24 +232,44 @@ function processItems(items, categoryPath = '') {
         .filter(p => p.key !== 'auth_token')
         .map(p => ({
           name: p.key,
-          displayName: toDisplayName(p.key),
+          displayName: toDisplayName(p.key), // acronym-fixed; will also be translated
           type: 'string',
           required: !p.disabled,
-          placeholder: p.value && !p.value.startsWith('{{') ? p.value : '',
+          placeholder: normalisePlaceholder(
+            p.value && !p.value.startsWith('{{') ? p.value : ''
+          ),
         }));
 
       result[category].push({
-        name: item.name,           // will be translated
+        name: item.name,
         value: toValue(categoryPath, item.name),
         path: extractPath(item.request.url),
         description: (item.request.description?.split('\n')[0] || '')
-          .replace(/^#+\s*/, '').trim(), // will be translated
+          .replace(/^#+\s*/, '').trim(),
         params,
       });
     }
   }
 
   return result;
+}
+
+// ---------------------------------------------------------------------------
+// Build a deduplicated list of strings to translate, send to DeepL once,
+// and return a lookup map { original → translated }.
+// ---------------------------------------------------------------------------
+async function buildTranslationMap(strings) {
+  const unique = [...new Set(strings.filter(needsTranslation))];
+  if (unique.length === 0) return {};
+
+  console.error(`[DeepL] Translating ${unique.length} unique strings...`);
+  const translated = await deeplTranslate(unique);
+
+  const map = {};
+  for (let i = 0; i < unique.length; i++) {
+    map[unique[i]] = translated[i];
+  }
+  return map;
 }
 
 // ---------------------------------------------------------------------------
@@ -200,65 +287,55 @@ async function main() {
   console.error(`Categories: ${totalCategories} | Endpoints: ${totalEndpoints}`);
 
   // -------------------------------------------------------------------------
-  // Build the list of strings that need translation, preserving order so we
-  // can map translated values back by index.
-  //
-  // Layout:
-  //   [0 .. totalCategories-1]          → category names
-  //   [totalCategories .. N]            → endpoint names + descriptions
-  //     interleaved: name, description, name, description, ...
+  // Collect every string that needs translation in a single pass
   // -------------------------------------------------------------------------
-  const stringsToTranslate = [];
+  const allStrings = [];
 
-  // Category names
   for (const cat of categoryKeys) {
-    stringsToTranslate.push(cat);
-  }
-
-  // Endpoint names + descriptions
-  for (const cat of categoryKeys) {
+    allStrings.push(cat);
     for (const ep of endpointMap[cat]) {
-      stringsToTranslate.push(ep.name);
-      stringsToTranslate.push(ep.description || '');
+      allStrings.push(ep.name);
+      allStrings.push(ep.description || '');
+      for (const param of ep.params) {
+        allStrings.push(param.displayName);
+        allStrings.push(param.placeholder || '');
+        allStrings.push(param.description || '');
+      }
     }
   }
 
-  // Filter out blanks before sending (DeepL rejects empty strings)
-  const nonEmpty   = stringsToTranslate.map(s => s.trim());
-  const blankFlags = nonEmpty.map(s => s === '');
-  const toSend     = nonEmpty.map((s, i) => blankFlags[i] ? null : s).filter(Boolean);
-  const uniqueToSend = [...new Set(toSend)];
-
-  console.error(`[DeepL] Translating ${uniqueToSend.length} unique strings...`);
-  const translatedUnique = await deeplTranslate(uniqueToSend);
-
-  // Build lookup map  original → translated
-  const translationMap = {};
-  for (let i = 0; i < uniqueToSend.length; i++) {
-    translationMap[uniqueToSend[i]] = translatedUnique[i];
-  }
+  const translationMap = await buildTranslationMap(allStrings);
 
   const translate = (s) => {
     if (!s || !s.trim()) return s;
-    return translationMap[s.trim()] ?? s;
+    const result = translationMap[s] ?? s;
+    // Re-apply acronym fixes after translation (DeepL may lowercase them),
+    // then sanitize any Portuguese words that DeepL left untranslated.
+    return sanitizeTranslation(fixAcronyms(result));
   };
 
   // -------------------------------------------------------------------------
-  // Apply translations back to endpointMap and build translated CATEGORIES
+  // Apply translations
   // -------------------------------------------------------------------------
   const translatedCategories = [];
 
   for (const cat of categoryKeys) {
-    const translatedCatName = translate(cat);
-
     translatedCategories.push({
-      name: translatedCatName,
-      value: cat,              // value stays as the original PT key (stable slug)
+      name: translate(cat),
+      value: cat, // stable PT slug — do not translate
     });
 
     for (const ep of endpointMap[cat]) {
       ep.name        = translate(ep.name);
       ep.description = translate(ep.description);
+
+      for (const param of ep.params) {
+        param.displayName = translate(param.displayName);
+        param.placeholder = translate(param.placeholder);
+        if (param.description) {
+          param.description = translate(param.description);
+        }
+      }
     }
   }
 
