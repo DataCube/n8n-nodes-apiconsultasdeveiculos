@@ -48,12 +48,24 @@ const ACRONYM_FIXES = [
   [/\bUid\b/g,              'UID'],
   [/\bApi\b/g,              'API'],
   [/\bId\b/g,               'ID'],
+  [/\bIe\b/g,               'IE'],
   // Combined patterns must come before simple ones to avoid partial substitution
   [/\bFipe\s+code\b/gi,        'FIPE Code'],
   [/\bFipe\b/g,                'FIPE'],
   [/\bCrv\s+number\b/gi,       'CRV Number'],
   [/\bCrv\b/g,                 'CRV'],
   [/\bInmetro\s+number\b/gi,   'Inmetro Number'],
+];
+
+// ---------------------------------------------------------------------------
+// Portuguese abbreviation → full word expansion applied inside toDisplayName()
+// BEFORE title-casing, so DeepL receives recognisable Portuguese words.
+// ---------------------------------------------------------------------------
+const PT_ABBREV_EXPANSIONS = [
+  [/\bnum\b/g,  'numero'],    // avoids "num" being read as PT preposition ("in a")
+  [/\bcod\b/g,  'codigo'],    // código
+  [/\bseg\b/g,  'seguranca'], // segurança (vehicle-doc context: cod_seg_crv)
+  [/\bn\b/g,    'numero'],    // standalone single-letter n (e.g. n_via_crv)
 ];
 
 function fixAcronyms(str) {
@@ -101,6 +113,17 @@ const PT_FALLBACKS = [
   [/\bDangerous\s+Goods\s+Dangerous\b/g, 'Dangerous Goods'],
   // Proper nouns that must not be translated
   [/\bComplain\s+here\b/gi,              'Reclame Aqui'],
+  [/\bHoly Spirit\b/g,                   'Espírito Santo'],
+  // Semantic patch: "or" cannot be derived from field name cnpj_ie
+  [/\bCNPJ IE\b/g,                       'CNPJ or IE'],
+  // Word-order safety nets after abbreviation expansion + DeepL
+  [/\bSecurity Code CRV\b/g,             'CRV Security Code'],
+  [/\bVehicle Number Via CRV\b/g,         'Vehicle CRV Issue Number'],
+  [/\bVehicle N Via CRV\b/g,             'Vehicle CRV Issue Number'],
+  [/\bNumber Via CRV\b/g,               'CRV Issue Number'],
+  [/\bN Via CRV\b/g,                     'CRV Issue Number'],
+  // DeepL may leave title-cased accent-free Portuguese words untranslated
+  [/\bCodigo Municipio Nascimento\b/g,   'Birth Municipality Code'],
 ];
 
 function sanitizeTranslation(str) {
@@ -116,14 +139,19 @@ function sanitizeTranslation(str) {
 // Helpers
 // ---------------------------------------------------------------------------
 function toDisplayName(key) {
-  const result = key
+  let expanded = key
     .replace(/[\[\]]/g, ' ')
     .replace(/_/g, ' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2')  // split camelCase before capitalising
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
     .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\b\w/g, c => c.toUpperCase());
-  return fixAcronyms(result);
+    .trim();
+
+  // Expand Portuguese abbreviations before title-casing so DeepL gets full words
+  for (const [pattern, replacement] of PT_ABBREV_EXPANSIONS) {
+    expanded = expanded.replace(pattern, replacement);
+  }
+
+  return fixAcronyms(expanded.replace(/\b\w/g, c => c.toUpperCase()));
 }
 
 function toValue(categoryPath, name) {

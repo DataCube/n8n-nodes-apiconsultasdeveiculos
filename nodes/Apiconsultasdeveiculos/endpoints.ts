@@ -48,7 +48,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "API error code information",
       value: "conta_informacoes_de_codigos_de_erros_da_api",
       path: "/conta/erros",
-      description: "Endpoint status query",
+      description: "Endpoint Status Query",
       params: []
     },
     {
@@ -324,7 +324,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       params: [
         {
           name: "cnpj_ie",
-          displayName: "CNPJ Ie",
+          displayName: "CNPJ or IE",
           type: "string",
           required: true,
           placeholder: "XX.XXX.XXX/XXXX-XX"
@@ -984,7 +984,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "National consultation - Theft and burglary evidence",
+      name: "National consultation - Theft and burglary reports",
       value: "veiculos_informacoes_consulta_nacional_indicio_de_roubo_e_furto",
       path: "/veiculos/indicio-roubo-furto",
       description: "Vehicle search - Theft and burglary reports",
@@ -1303,7 +1303,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "Holy Spirit",
+      name: "Espírito Santo",
       value: "veiculos_debitos_espirito_santo",
       path: "/debitos/es",
       description: "Debt Consultation - Espírito Santo",
@@ -2444,14 +2444,14 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "num_crv",
-          displayName: "In a CRV",
+          displayName: "CRV Number",
           type: "string",
           required: true,
           placeholder: "XXXXXXXXXXXX"
         },
         {
           name: "cod_seg_crv",
-          displayName: "Cod Seg CRV",
+          displayName: "CRV Security Code",
           type: "string",
           required: true,
           placeholder: "XXXXXXXXXXX"
@@ -2818,14 +2818,14 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "veiculo[n_via_crv]",
-          displayName: "Vehicle N Via CRV",
+          displayName: "Vehicle CRV Issue Number",
           type: "string",
           required: true,
           placeholder: "XXXX"
         },
         {
           name: "veiculo[cod_seguranca_crv]",
-          displayName: "Vehicle Security Code CRV",
+          displayName: "Vehicle CRV Security Code",
           type: "string",
           required: true,
           placeholder: "XXXX"
@@ -2987,7 +2987,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "num_transacao",
-          displayName: "Num Transaction",
+          displayName: "Transaction Number",
           type: "string",
           required: true,
           placeholder: "XXXXXX"
@@ -3306,7 +3306,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "cod_municipio_nascimento",
-          displayName: "Cod Municipality Birth",
+          displayName: "Birth Municipality Code",
           type: "string",
           required: true,
           placeholder: "XXXX"
