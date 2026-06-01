@@ -1,5 +1,5 @@
 /* eslint-disable */
-// AUTO-GENERATED from Consultas - V2.10.2.73
+// AUTO-GENERATED from Consultas - V2.10.2.81
 // Generator: postman-to-n8n.js
 // Total: 176 endpoints across 17 categories
 
