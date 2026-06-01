@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apiconsultasdeveiculos",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "n8n community node for the Datacube vehicle and records consultation API (api.consultasdeveiculos.com).",
   "license": "MIT",
   "homepage": "https://github.com/DataCube/n8n-nodes-apiconsultasdeveiculos#readme",
