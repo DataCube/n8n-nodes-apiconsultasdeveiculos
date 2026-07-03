@@ -11,6 +11,12 @@
     "name": "Rodrigo Roda",
     "email": "rodrroda@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Danilo Satti",
+      "email": "danilo.satti@datacube.com.br"
+    }
+  ],
   "publishConfig": {
     "access": "public"
   },
