@@ -136,6 +136,66 @@ function sanitizeTranslation(str) {
 }
 
 // ---------------------------------------------------------------------------
+// Sentence case converter for descriptions.
+// Converts "Consultation - CPF Companies" → "Consultation - CPF companies"
+// while preserving acronyms (CPF, CNPJ, CNH, UF, etc.) and proper nouns.
+// ---------------------------------------------------------------------------
+const PRESERVE_UPPERCASE = new Set([
+  'CPF', 'CNPJ', 'CNH', 'UF', 'API', 'URL', 'UID', 'ID', 'IE', 'DDD',
+  'FIPE', 'CRV', 'CRLV', 'ANTT', 'INMETRO', 'PF', 'PJ', 'CDA', 'IPVA',
+  'DPVAT', 'PDF', 'HTTP', 'HTTPS', 'V2', 'V3', 'V4',
+  // Brazilian state abbreviations
+  'AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS',
+  'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC',
+  'SE', 'SP', 'TO',
+]);
+
+// Full state names and proper nouns that should remain Title Case
+const PROPER_NOUNS = new Set([
+  'Acre', 'Alagoas', 'Amazonas', 'Amapá', 'Bahia', 'Ceará', 'Federal',
+  'District', 'Espírito', 'Santo', 'Goiás', 'Maranhão', 'Mato', 'Grosso',
+  'Sul', 'Minas', 'Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco',
+  'Piauí', 'Janeiro', 'Grande', 'Norte', 'Rondônia', 'Roraima', 'Catarina',
+  'Sergipe', 'Paulo', 'Tocantins', 'São', 'Rio', 'Santa', 'Brazil',
+  'Brazilian', 'National', 'Reclame', 'Aqui', 'Flash', 'Active', 'Debt',
+  'Simple', 'Complete', 'Full', 'Issuing', 'Consultation', 'Dangerous',
+  'Goods', 'Documents', 'Debts', 'Information', 'Aggregates', 'Companies',
+  'Vehicles', 'Registration', 'Credit', 'Agencies', 'Owner', 'Current',
+]);
+
+function toSentenceCase(str) {
+  if (!str || !str.trim()) return str;
+  
+  // Split on spaces, dashes, and other separators while preserving them
+  const words = str.split(/(\s+|-|\/|\(|\))/);
+  let isFirstWord = true;
+  
+  const result = words.map((word) => {
+    // Preserve separators as-is
+    if (/^[\s\-\/\(\)]$/.test(word)) return word;
+    
+    // Preserve known acronyms
+    const upperWord = word.toUpperCase();
+    if (PRESERVE_UPPERCASE.has(upperWord)) return upperWord;
+    
+    // Preserve proper nouns in Title Case
+    const titleWord = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    if (PROPER_NOUNS.has(titleWord)) return titleWord;
+    
+    // First word: capitalize first letter only
+    if (isFirstWord) {
+      isFirstWord = false;
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    
+    // All other words: lowercase
+    return word.toLowerCase();
+  });
+  
+  return result.join('');
+}
+
+// ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function toDisplayName(key) {
@@ -366,7 +426,8 @@ async function main() {
 
     for (const ep of endpointMap[cat]) {
       ep.name        = translate(ep.name);
-      ep.description = translate(ep.description);
+      // Apply sentence case to descriptions after translation
+      ep.description = toSentenceCase(translate(ep.description));
 
       for (const param of ep.params) {
         param.displayName = translate(param.displayName);

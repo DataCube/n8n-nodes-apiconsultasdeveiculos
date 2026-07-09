@@ -26,7 +26,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consumption information",
       value: "conta_informacoes_de_consumo",
       path: "/conta/consultas",
-      description: "Account Consumption Inquiry",
+      description: "Account consumption inquiry",
       params: [
         {
           name: "de",
@@ -48,7 +48,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "API error code information",
       value: "conta_informacoes_de_codigos_de_erros_da_api",
       path: "/conta/erros",
-      description: "Endpoint Status Query",
+      description: "Endpoint status query",
       params: []
     },
     {
@@ -64,7 +64,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Create an asynchronous task",
       value: "assincrono_criar_tarefa_assincrona",
       path: "/async/create-task",
-      description: "Create Task",
+      description: "Create task",
       params: [
         {
           name: "endpoint",
@@ -107,7 +107,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Search for an asynchronous task",
       value: "assincrono_buscar_tarefa_assincrona",
       path: "/api/get-task",
-      description: "Get Task",
+      description: "Get task",
       params: [
         {
           name: "request_uid",
@@ -122,7 +122,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Retrieve an asynchronous task",
       value: "assincrono_recuperar_tarefa_assincrona",
       path: "/api/recovery-task",
-      description: "Recovery Task",
+      description: "Recovery task",
       params: [
         {
           name: "request_uid",
@@ -139,7 +139,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consult CPF companies",
       value: "cadastros_consultar_empresas_do_cpf",
       path: "/pessoas/empresas",
-      description: "Consultation - CPF Companies",
+      description: "Consultation - CPF companies",
       params: [
         {
           name: "cpf",
@@ -154,7 +154,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consult CPF name",
       value: "cadastros_consultar_nome_do_cpf",
       path: "/pessoas/nome",
-      description: "Consultation - CPF Name",
+      description: "Consultation - CPF name",
       params: [
         {
           name: "cpf",
@@ -169,7 +169,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - CPF registration data",
       value: "cadastros_consulta_dados_cadastrais_do_cpf",
       path: "/pessoas/cadastro",
-      description: "Consultation - CPF Registration Data",
+      description: "Consultation - CPF registration data",
       params: [
         {
           name: "cpf",
@@ -184,7 +184,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - CPF Location",
       value: "cadastros_consulta_localizacao_cpf",
       path: "/pessoas/localizacao",
-      description: "Query - CPF Location v1",
+      description: "Query - CPF location v1",
       params: [
         {
           name: "cpf",
@@ -199,7 +199,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Query - CPF Location v2",
       value: "cadastros_consulta_localizacao_cpf_v2",
       path: "/pessoas/localizacao_v2",
-      description: "Query - CPF Location v2",
+      description: "Query - CPF location V2",
       params: [
         {
           name: "cpf",
@@ -214,7 +214,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Query - CPF Location v3",
       value: "cadastros_consulta_localizacao_cpf_v3",
       path: "/pessoas/localizacao_v3",
-      description: "Query - CPF Location v3",
+      description: "Query - CPF location V3",
       params: [
         {
           name: "cpf",
@@ -229,7 +229,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - People By Phone",
       value: "cadastros_consulta_pessoas_por_telefone",
       path: "/pessoas/telefone",
-      description: "Consultation - People By Phone",
+      description: "Consultation - people by phone",
       params: [
         {
           name: "ddd",
@@ -266,7 +266,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - Serpro Municipalities",
       value: "cadastros_consulta_municipios_serpro",
       path: "/demografia/municipios-serpro",
-      description: "Consultation - Serpro Municipalities",
+      description: "Consultation - Serpro municipalities",
       params: [
         {
           name: "uf",
@@ -281,7 +281,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - IBGE Municipalities",
       value: "cadastros_consulta_municipios_ibge",
       path: "/demografia/municipios-ibge",
-      description: "Consultation - IBGE Municipalities",
+      description: "Consultation - IBGE municipalities",
       params: [
         {
           name: "uf",
@@ -296,7 +296,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Decode Official Document (QRCode)",
       value: "cadastros_decodificar_documento_oficial_qrcode",
       path: "/documentos/decodificar",
-      description: "Search - Decode Official Document (QRCode)",
+      description: "Search - decode official document (QRCODE)",
       params: [
         {
           name: "image_base64",
@@ -349,7 +349,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "NFe consultation",
       value: "orgaos_consulta_nfe",
       path: "/orgaos/nfe",
-      description: "NFe consultation",
+      description: "NFE Consultation",
       params: [
         {
           name: "chave",
@@ -386,7 +386,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "CPF status at Receita Federal",
       value: "orgaos_situacao_do_cpf_na_receita_federal",
       path: "/pessoas/situacao",
-      description: "CPF status at Receita Federal",
+      description: "CPF Status at Receita Federal",
       params: [
         {
           name: "cpf",
@@ -408,7 +408,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "CNPJ status at the Federal Revenue Office",
       value: "orgaos_situacao_do_cnpj_na_receita_federal",
       path: "/empresas/situacao",
-      description: "CNPJ status at the Federal Revenue Office",
+      description: "CNPJ Status at the Federal Revenue Office",
       params: [
         {
           name: "cnpj",
@@ -455,7 +455,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "PF Full Credit",
       value: "credito_credito_completa_pf",
       path: "/credito/credito-completa-pf",
-      description: "Individual Full Credit",
+      description: "Individual full credit",
       params: [
         {
           name: "cpf",
@@ -470,7 +470,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Full Credit",
       value: "credito_credito_completa_pj",
       path: "/credito/credito-completa-pj",
-      description: "Full Corporate Credit",
+      description: "Full corporate credit",
       params: [
         {
           name: "cnpj",
@@ -485,7 +485,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Restriction Score PF",
       value: "credito_restricao_score_pf",
       path: "/credito/restricao-score-pf",
-      description: "Restriction Score PF",
+      description: "Restriction score PF",
       params: [
         {
           name: "cpf",
@@ -500,7 +500,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Restriction Score PJ",
       value: "credito_restricao_score_pj",
       path: "/credito/restricao-score-pj",
-      description: "Restriction Score PJ",
+      description: "Restriction score PJ",
       params: [
         {
           name: "cnpj",
@@ -515,7 +515,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Location Score",
       value: "credito_localizacao_score",
       path: "/credito/localizacao-score",
-      description: "Location Score",
+      description: "Location score",
       params: [
         {
           name: "documento",
@@ -547,7 +547,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Aggregates",
       value: "veiculos_informacoes_consulta_nacional_agregados",
       path: "/veiculos/agregados",
-      description: "National consultation - Aggregates",
+      description: "National Consultation - aggregates",
       params: [
         {
           name: "placa",
@@ -576,7 +576,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Aggregates V2",
       value: "veiculos_informacoes_consulta_nacional_agregados_v2",
       path: "/veiculos/agregados_v2",
-      description: "National consultation - Aggregates",
+      description: "National Consultation - aggregates",
       params: [
         {
           name: "placa",
@@ -635,7 +635,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - State base",
       value: "veiculos_informacoes_consulta_nacional_base_estadual",
       path: "/veiculos/bin-estadual",
-      description: "Vehicle consultation - State BIN",
+      description: "Vehicle consultation - state BIN",
       params: [
         {
           name: "placa",
@@ -650,7 +650,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - National Base V2",
       value: "veiculos_informacoes_consulta_nacional_base_nacional_v2",
       path: "/veiculos/base-nacional-v2",
-      description: "National consultation - National Base",
+      description: "National Consultation - National base",
       params: [
         {
           name: "placa",
@@ -680,7 +680,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National inquiry - 0km vehicle inquiry",
       value: "veiculos_informacoes_consulta_nacional_consulta_veiculo_0km",
       path: "/veiculos/consulta-0km",
-      description: "0km Vehicle Search by Chassis",
+      description: "0km vehicle search by chassis",
       params: [
         {
           name: "chassi",
@@ -710,7 +710,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National query - Owner / Last license year",
       value: "veiculos_informacoes_consulta_nacional_proprietario_ano_ultimo_licenciamento",
       path: "/veiculos/proprietario-ano-licenciamento",
-      description: "National query - Owner / Last license year",
+      description: "National Query - owner / last license year",
       params: [
         {
           name: "placa",
@@ -725,7 +725,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National query - Current Owner",
       value: "veiculos_informacoes_consulta_nacional_proprietario_atual",
       path: "/veiculos/proprietario-atual",
-      description: "National query - Current Owner",
+      description: "National Query - current owner",
       params: [
         {
           name: "placa",
@@ -740,7 +740,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Simple V2",
       value: "veiculos_informacoes_consulta_nacional_simples_v2",
       path: "/veiculos/informacao-simples-v2",
-      description: "Vehicle consultation - National Simple V2",
+      description: "Vehicle consultation - National simple V2",
       params: [
         {
           name: "placa",
@@ -755,7 +755,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - V3 infringements",
       value: "veiculos_informacoes_consulta_nacional_infracoes_v3",
       path: "/veiculos/infracoes-v3",
-      description: "Vehicle consultation - Offenses V3",
+      description: "Vehicle consultation - offenses V3",
       params: [
         {
           name: "placa",
@@ -770,7 +770,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Information by Renavam",
       value: "veiculos_informacoes_consulta_nacional_informacoes_por_renavam",
       path: "/veiculos/informacao-por-renavam",
-      description: "National consultation - Information by Renavam",
+      description: "National Consultation - information by renavam",
       params: [
         {
           name: "renavam",
@@ -785,7 +785,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National query - Chassis decoding",
       value: "veiculos_informacoes_consulta_nacional_decodificacao_de_chassi",
       path: "/veiculos/decodificar-chassi",
-      description: "National query - Chassis decoding",
+      description: "National Query - chassis decoding",
       params: [
         {
           name: "chassi",
@@ -800,7 +800,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Engine decoding",
       value: "veiculos_informacoes_consulta_nacional_decodificacao_de_motor",
       path: "/veiculos/decodificar-motor",
-      description: "National consultation - Engine decoding",
+      description: "National Consultation - engine decoding",
       params: [
         {
           name: "motor",
@@ -815,7 +815,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Chronograph",
       value: "veiculos_informacoes_consulta_nacional_cronotacografo",
       path: "/veiculos/cronotacografo",
-      description: "Vehicle query - National Chronograph",
+      description: "Vehicle query - National chronograph",
       params: [
         {
           name: "placa",
@@ -845,7 +845,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - V3 liens",
       value: "veiculos_informacoes_consulta_nacional_gravames_v3",
       path: "/veiculos/gravames-v3",
-      description: "National Consultation - Liens V3",
+      description: "National Consultation - liens V3",
       params: [
         {
           name: "placa",
@@ -860,7 +860,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - History of liens",
       value: "veiculos_informacoes_consulta_nacional_historico_de_gravames",
       path: "/veiculos/historico_gravames",
-      description: "Vehicle consultation - History of liens",
+      description: "Vehicle consultation - history of liens",
       params: [
         {
           name: "chassi",
@@ -890,7 +890,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Trademarks",
       value: "veiculos_informacoes_consulta_nacional_marcas",
       path: "/veiculos/marcas",
-      description: "Vehicle search - Brands by type",
+      description: "Vehicle search - brands by type",
       params: [
         {
           name: "tipo",
@@ -905,7 +905,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Templates",
       value: "veiculos_informacoes_consulta_nacional_modelos",
       path: "/veiculos/modelos",
-      description: "Vehicle search - Models by type and make",
+      description: "Vehicle search - models by type and make",
       params: [
         {
           name: "tipo",
@@ -927,7 +927,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Recall",
       value: "veiculos_informacoes_consulta_nacional_recall",
       path: "/veiculos/recall",
-      description: "Vehicle consultation - National Recall",
+      description: "Vehicle consultation - National recall",
       params: [
         {
           name: "placa",
@@ -942,7 +942,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National query - Renavam",
       value: "veiculos_informacoes_consulta_nacional_renavam",
       path: "/veiculos/renavam",
-      description: "Vehicle consultation - National Renavam",
+      description: "Vehicle consultation - National renavam",
       params: [
         {
           name: "placa",
@@ -957,7 +957,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National query - Renavam V2",
       value: "veiculos_informacoes_consulta_nacional_renavam_v2",
       path: "/veiculos/renavam-v2",
-      description: "Vehicle consultation - Renavam National V2",
+      description: "Vehicle consultation - renavam National V2",
       params: [
         {
           name: "placa",
@@ -972,7 +972,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Auction",
       value: "veiculos_informacoes_consulta_nacional_leilao",
       path: "/veiculos/leilao",
-      description: "Vehicle search - Auction",
+      description: "Vehicle search - auction",
       params: [
         {
           name: "placa",
@@ -987,7 +987,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Theft and burglary reports",
       value: "veiculos_informacoes_consulta_nacional_indicio_de_roubo_e_furto",
       path: "/veiculos/indicio-roubo-furto",
-      description: "Vehicle search - Theft and burglary reports",
+      description: "Vehicle search - theft and burglary reports",
       params: [
         {
           name: "placa",
@@ -1002,7 +1002,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Indication of a claim",
       value: "veiculos_informacoes_consulta_nacional_indicio_de_sinistro",
       path: "/veiculos/sinistro",
-      description: "Vehicle inquiry - Indication of loss",
+      description: "Vehicle inquiry - indication of loss",
       params: [
         {
           name: "placa",
@@ -1017,7 +1017,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - Theft and Robbery",
       value: "veiculos_informacoes_consulta_nacional_roubo_e_furto",
       path: "/veiculos/roubo_furto",
-      description: "Vehicle Search - Theft and Robbery",
+      description: "Vehicle search - theft and robbery",
       params: [
         {
           name: "placa",
@@ -1032,7 +1032,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National consultation - FIPE History",
       value: "veiculos_informacoes_consulta_nacional_historico_fipe",
       path: "/veiculos/historico-fipe",
-      description: "National consultation - FIPE History",
+      description: "National Consultation - FIPE history",
       params: [
         {
           name: "codigo_fipe",
@@ -1061,7 +1061,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Renajud V3",
       value: "veiculos_informacoes_consulta_nacional_renajud_v3",
       path: "/veiculos/renajud-v3",
-      description: "National Consultation - Renajud V3",
+      description: "National Consultation - renajud V3",
       params: [
         {
           name: "placa",
@@ -1076,7 +1076,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Renajud V4",
       value: "veiculos_informacoes_consulta_nacional_renajud_v4",
       path: "/veiculos/renajud-v4",
-      description: "National Consultation - Renajud V4",
+      description: "National Consultation - renajud V4",
       params: [
         {
           name: "placa",
@@ -1091,7 +1091,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Safety Certificate - CSV",
       value: "veiculos_informacoes_certificado_de_seguranca_veicular_csv",
       path: "/veiculos/csv",
-      description: "Vehicle Safety Certificate - CSV",
+      description: "Vehicle safety Certificate - csv",
       params: [
         {
           name: "placa",
@@ -1120,7 +1120,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Vehicles by document (CPF/CNPJ)",
       value: "veiculos_informacoes_consulta_nacional_veiculos_por_documento_cpf_cnpj",
       path: "/pessoas/veiculos",
-      description: "National Consultation - Vehicles by Document (CPF/CNPJ)",
+      description: "National Consultation - vehicles by document (CPF/CNPJ)",
       params: [
         {
           name: "documento",
@@ -1135,7 +1135,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Vehicles by document (CPF/CNPJ) - V2",
       value: "veiculos_informacoes_consulta_nacional_veiculos_por_documento_cpf_cnpj_v2",
       path: "/pessoas/veiculos_v2",
-      description: "National Consultation - Vehicles by document (CPF/CNPJ) - V2",
+      description: "National Consultation - vehicles by document (CPF/CNPJ) - V2",
       params: [
         {
           name: "documento",
@@ -1350,7 +1350,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Minas Gerais (IPVA/Licensing)",
       value: "veiculos_debitos_minas_gerais_ipva_licenciamento",
       path: "/debitos/mg-simples",
-      description: "Debt Consultation - Minas Gerais (IPVA/Licensing)",
+      description: "Debt Consultation - Minas Gerais (IPVA/licensing)",
       params: [
         {
           name: "placa",
@@ -1481,7 +1481,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Paraíba",
       value: "veiculos_debitos_paraiba",
       path: "/debitos/pb",
-      description: "Vehicle debt inquiry - Paraíba",
+      description: "Vehicle Debt inquiry - Paraíba",
       params: [
         {
           name: "placa",
@@ -1510,7 +1510,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Paraná",
       value: "veiculos_debitos_parana",
       path: "/debitos/pr",
-      description: "Vehicle debt inquiry - Paraná",
+      description: "Vehicle Debt inquiry - Paraná",
       params: [
         {
           name: "renavam",
@@ -1525,7 +1525,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Piauí",
       value: "veiculos_debitos_piaui",
       path: "/debitos/pi",
-      description: "Vehicle debt inquiry - Piauí",
+      description: "Vehicle Debt inquiry - Piauí",
       params: [
         {
           name: "placa",
@@ -1547,7 +1547,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Rio de Janeiro",
       value: "veiculos_debitos_rio_de_janeiro",
       path: "/debitos/rj",
-      description: "Vehicle debt inquiries - Rio de Janeiro",
+      description: "Vehicle Debt inquiries - Rio de Janeiro",
       params: [
         {
           name: "placa",
@@ -1576,7 +1576,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Rio Grande do Norte",
       value: "veiculos_debitos_rio_grande_do_norte",
       path: "/debitos/rn",
-      description: "Vehicle debt inquiry - Rio Grande do Norte",
+      description: "Vehicle Debt inquiry - Rio Grande do Norte",
       params: [
         {
           name: "placa",
@@ -1598,7 +1598,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Rondônia",
       value: "veiculos_debitos_rondonia",
       path: "/debitos/ro",
-      description: "Vehicle debt inquiry - Rondônia",
+      description: "Vehicle Debt inquiry - Rondônia",
       params: [
         {
           name: "placa",
@@ -1627,7 +1627,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Roraima",
       value: "veiculos_debitos_roraima",
       path: "/debitos/rr",
-      description: "Vehicle debt inquiry - Roraima",
+      description: "Vehicle Debt inquiry - Roraima",
       params: [
         {
           name: "placa",
@@ -1649,7 +1649,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Santa Catarina",
       value: "veiculos_debitos_santa_catarina",
       path: "/debitos/sc",
-      description: "Vehicle debt inquiry - Santa Catarina",
+      description: "Vehicle Debt inquiry - Santa Catarina",
       params: [
         {
           name: "placa",
@@ -1678,7 +1678,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Santa Catarina V2",
       value: "veiculos_debitos_santa_catarina_v2",
       path: "/debitos/sc-v2",
-      description: "Vehicle debt inquiry - Santa Catarina V2",
+      description: "Vehicle Debt inquiry - Santa Catarina V2",
       params: [
         {
           name: "placa",
@@ -1722,7 +1722,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Tocantins",
       value: "veiculos_debitos_tocantins",
       path: "/debitos/to",
-      description: "Vehicle debt inquiry - Tocantins",
+      description: "Vehicle Debt inquiry - Tocantins",
       params: [
         {
           name: "placa",
@@ -1753,7 +1753,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Certificate - CTPP",
       value: "veiculos_orgaos_antt_prod_perigosos_certificado_ctpp",
       path: "/orgaos/consulta-antt-ctpp",
-      description: "Certificate Consultation - Dangerous Goods Certificate",
+      description: "Certificate Consultation - dangerous goods Certificate",
       params: [
         {
           name: "placa",
@@ -1782,7 +1782,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Certificate - CIPP",
       value: "veiculos_orgaos_antt_prod_perigosos_certificado_cipp",
       path: "/orgaos/consulta-antt-cipp",
-      description: "Certificate Consultation - Dangerous Goods Inspection Certificate",
+      description: "Certificate Consultation - dangerous goods inspection Certificate",
       params: [
         {
           name: "placa",
@@ -1811,7 +1811,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Certificate - CIV",
       value: "veiculos_orgaos_antt_prod_perigosos_certificado_civ",
       path: "/orgaos/consulta-antt-civ",
-      description: "Certificate Consultation - Vehicle Inspection Certificate.",
+      description: "Certificate Consultation - vehicle inspection certificate.",
       params: [
         {
           name: "placa",
@@ -1842,7 +1842,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "ANTT Vehicle",
       value: "veiculos_orgaos_antt_veiculo",
       path: "/orgaos/antt-veiculo",
-      description: "Vehicle Consultation - ANTT",
+      description: "Vehicle consultation - ANTT",
       params: [
         {
           name: "placa",
@@ -1864,7 +1864,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "ANTT Carrier",
       value: "veiculos_orgaos_antt_transportador",
       path: "/orgaos/antt-transportador",
-      description: "Carrier Consultation - ANTT",
+      description: "Carrier consultation - ANTT",
       params: [
         {
           name: "documento",
@@ -1879,7 +1879,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "DER",
       value: "veiculos_orgaos_der",
       path: "/orgaos/der",
-      description: "Consultation of Notifications - DER",
+      description: "Consultation of notifications - der",
       params: [
         {
           name: "placa",
@@ -1901,7 +1901,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "DER PR",
       value: "veiculos_orgaos_der_pr",
       path: "/orgaos/der-pr",
-      description: "Consultation of Notifications - DER PR",
+      description: "Consultation of notifications - der PR",
       params: [
         {
           name: "placa",
@@ -1916,7 +1916,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Detran SP - Vehicle Process Monitoring",
       value: "veiculos_orgaos_detran_sp_acompanhamento_de_processo_veicular",
       path: "/orgaos/detran-sp-acompanhamento",
-      description: "Detran SP - Vehicle Process Monitoring",
+      description: "Detran SP - vehicle process monitoring",
       params: [
         {
           name: "placa",
@@ -1945,7 +1945,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Rio de Janeiro",
       value: "veiculos_orgaos_licenciamento_veicular_rio_de_janeiro",
       path: "/orgaos/licenciamento-rj",
-      description: "Vehicle Licensing Consultation - Rio de Janeiro",
+      description: "Vehicle licensing consultation - Rio de Janeiro",
       params: [
         {
           name: "placa",
@@ -1960,7 +1960,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Paraná",
       value: "veiculos_orgaos_licenciamento_veicular_parana",
       path: "/orgaos/licenciamento-pr",
-      description: "Vehicle License Consultation - Paraná",
+      description: "Vehicle license consultation - Paraná",
       params: [
         {
           name: "renavam",
@@ -1975,7 +1975,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Minas Gerais",
       value: "veiculos_orgaos_licenciamento_veicular_minas_gerais",
       path: "/veiculos/licenciamento-mg",
-      description: "Vehicle Licensing Consultation - Minas Gerais",
+      description: "Vehicle licensing consultation - Minas Gerais",
       params: [
         {
           name: "placa",
@@ -1997,7 +1997,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Ceará",
       value: "veiculos_orgaos_licenciamento_veicular_ceara",
       path: "/veiculos/licenciamento-ce",
-      description: "Vehicle Licensing Consultation - Ceará",
+      description: "Vehicle licensing consultation - Ceará",
       params: [
         {
           name: "placa",
@@ -2012,7 +2012,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Federal District",
       value: "veiculos_orgaos_licenciamento_veicular_distrito_federal",
       path: "/veiculos/licenciamento-df",
-      description: "Vehicle Licensing Consultation - Ceará",
+      description: "Vehicle licensing consultation - Ceará",
       params: [
         {
           name: "placa",
@@ -2034,7 +2034,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Tocantins",
       value: "veiculos_orgaos_licenciamento_veicular_tocantins",
       path: "/veiculos/licenciamento-to",
-      description: "Vehicle Licensing Consultation - Tocantins",
+      description: "Vehicle licensing consultation - Tocantins",
       params: [
         {
           name: "placa",
@@ -2063,7 +2063,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Vehicle Licensing - Roraima",
       value: "veiculos_orgaos_licenciamento_veicular_roraima",
       path: "/veiculos/licenciamento-rr",
-      description: "Vehicle License Consultation - Roraima",
+      description: "Vehicle license consultation - Roraima",
       params: [
         {
           name: "placa",
@@ -2085,7 +2085,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "PRF",
       value: "veiculos_orgaos_prf",
       path: "/orgaos/prf",
-      description: "Consultation of Notifications - PRF",
+      description: "Consultation of notifications - prf",
       params: [
         {
           name: "placa",
@@ -2107,7 +2107,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "São Paulo State Attorney General's Office",
       value: "veiculos_orgaos_procuradoria_geral_do_estado_de_sao_paulo",
       path: "/orgaos/pge-sp",
-      description: "Consultation of outstanding debts - P.G.E. SP",
+      description: "Consultation of outstanding debts - p.g.e. SP",
       params: [
         {
           name: "renavam",
@@ -2122,9 +2122,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
   "Veículos > Documentos": [
     {
       name: "Issuing CRLVe (AC)",
-      value: "veiculos_documentos_emissao_de_crlve_ac",
-      path: "/veiculos/documentos-crlve-ac",
-      description: "Issuing CRLV-e (AC) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ac",
+      path: "/veiculos/documentos-CRLV-e-ac",
+      description: "Issuing CRLV-e (AC)",
       params: [
         {
           name: "placa",
@@ -2137,9 +2137,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (AL)",
-      value: "veiculos_documentos_emissao_de_crlve_al",
-      path: "/veiculos/documentos-crlve-al",
-      description: "Issuing CRLV-e (AL) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_al",
+      path: "/veiculos/documentos-CRLV-e-al",
+      description: "Issuing CRLV-e (AL)",
       params: [
         {
           name: "placa",
@@ -2152,9 +2152,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (AM)",
-      value: "veiculos_documentos_emissao_de_crlve_am",
-      path: "/veiculos/documentos-crlve-am",
-      description: "Issuing CRLV-e (AM) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_am",
+      path: "/veiculos/documentos-CRLV-e-am",
+      description: "Issuing CRLV-e (AM)",
       params: [
         {
           name: "placa",
@@ -2167,9 +2167,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (AP)",
-      value: "veiculos_documentos_emissao_de_crlve_ap",
-      path: "/veiculos/documentos-crlve-ap",
-      description: "Issuing CRLVe (AP)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ap",
+      path: "/veiculos/documentos-CRLV-e-ap",
+      description: "Issuing CRLV-e (AP)",
       params: [
         {
           name: "placa",
@@ -2196,9 +2196,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (BA)",
-      value: "veiculos_documentos_emissao_de_crlve_ba",
-      path: "/veiculos/documentos-crlve-ba-v2",
-      description: "Issuing CRLV-e (BA) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ba",
+      path: "/veiculos/documentos-CRLV-e-ba-v2",
+      description: "Issuing CRLV-e (BA)",
       params: [
         {
           name: "placa",
@@ -2211,9 +2211,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (BA) PF",
-      value: "veiculos_documentos_emissao_de_crlve_ba_pf",
-      path: "/veiculos/documentos-crlve-ba-pf",
-      description: "Issuing CRLVe (BA) PF",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ba_pf",
+      path: "/veiculos/documentos-CRLV-e-ba-pf",
+      description: "Issuing CRLV-e (BA) PF",
       params: [
         {
           name: "placa",
@@ -2226,9 +2226,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (CE)",
-      value: "veiculos_documentos_emissao_de_crlve_ce",
-      path: "/veiculos/documentos-crlve-ce",
-      description: "Issuing CRLVe (CE) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ce",
+      path: "/veiculos/documentos-CRLV-e-ce",
+      description: "Issuing CRLV-e (CE)",
       params: [
         {
           name: "placa",
@@ -2241,9 +2241,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (DF)",
-      value: "veiculos_documentos_emissao_de_crlve_df",
-      path: "/veiculos/documentos-crlve-df",
-      description: "Issuing CRLVe (DF) only PF \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_df",
+      path: "/veiculos/documentos-CRLV-e-df",
+      description: "Issuing CRLV-e (DF) only PF",
       params: [
         {
           name: "placa",
@@ -2256,9 +2256,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (ES)",
-      value: "veiculos_documentos_emissao_de_crlve_es",
-      path: "/veiculos/documentos-crlve-es",
-      description: "Issuing CRLVe (ES) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_es",
+      path: "/veiculos/documentos-CRLV-e-es",
+      description: "Issuing CRLV-e (ES)",
       params: [
         {
           name: "placa",
@@ -2285,9 +2285,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (GO) V2",
-      value: "veiculos_documentos_emissao_de_crlve_go_v2",
-      path: "/veiculos/documentos-crlve-go-v2",
-      description: "Issuing CRLVe (GO) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_go_v2",
+      path: "/veiculos/documentos-CRLV-e-go-v2",
+      description: "Issuing CRLV-e (GO) V2",
       params: [
         {
           name: "placa",
@@ -2300,9 +2300,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MA)",
-      value: "veiculos_documentos_emissao_de_crlve_ma",
-      path: "/veiculos/documentos-crlve-ma",
-      description: "Issuing CRLVe (MA)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ma",
+      path: "/veiculos/documentos-CRLV-e-ma",
+      description: "Issuing CRLV-e (MA)",
       params: [
         {
           name: "placa",
@@ -2329,9 +2329,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MT)",
-      value: "veiculos_documentos_emissao_de_crlve_mt",
-      path: "/veiculos/documentos-crlve-mt",
-      description: "Issuing CRLVe (MT)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_mt",
+      path: "/veiculos/documentos-CRLV-e-mt",
+      description: "Issuing CRLV-e (MT)",
       params: [
         {
           name: "placa",
@@ -2358,9 +2358,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MG)",
-      value: "veiculos_documentos_emissao_de_crlve_mg",
-      path: "/veiculos/documentos-crlve-mg",
-      description: "Issuing CRLVe (MG)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_mg",
+      path: "/veiculos/documentos-CRLV-e-mg",
+      description: "Issuing CRLV-e (MG)",
       params: [
         {
           name: "placa",
@@ -2373,9 +2373,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MG) V2",
-      value: "veiculos_documentos_emissao_de_crlve_mg_v2",
-      path: "/veiculos/documentos-crlve-mg-v2",
-      description: "Issuing CRLVe (MG) V2 without CRV Number",
+      value: "veiculos_documentos_emissao_de_CRLV-e_mg_v2",
+      path: "/veiculos/documentos-CRLV-e-mg-v2",
+      description: "Issuing CRLV-e (MG) V2 without CRV number",
       params: [
         {
           name: "placa",
@@ -2395,9 +2395,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MG) V3",
-      value: "veiculos_documentos_emissao_de_crlve_mg_v3",
-      path: "/veiculos/documentos-crlve-mg-v3",
-      description: "Issuing CRLVe (MG) V3",
+      value: "veiculos_documentos_emissao_de_CRLV-e_mg_v3",
+      path: "/veiculos/documentos-CRLV-e-mg-v3",
+      description: "Issuing CRLV-e (MG) V3",
       params: [
         {
           name: "placa",
@@ -2424,9 +2424,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MS)",
-      value: "veiculos_documentos_emissao_de_crlve_ms",
-      path: "/veiculos/documentos-crlve-ms",
-      description: "Issuing CRLVe (MS) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ms",
+      path: "/veiculos/documentos-CRLV-e-ms",
+      description: "Issuing CRLV-e (MS)",
       params: [
         {
           name: "placa",
@@ -2460,9 +2460,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (MS) V2",
-      value: "veiculos_documentos_emissao_de_crlve_ms_v2",
-      path: "/veiculos/documentos-crlve-ms-v2",
-      description: "Issuing CRLV-e (MS) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_ms_v2",
+      path: "/veiculos/documentos-CRLV-e-ms-v2",
+      description: "Issuing CRLV-e (MS) V2",
       params: [
         {
           name: "placa",
@@ -2475,9 +2475,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PA)",
-      value: "veiculos_documentos_emissao_de_crlve_pa",
-      path: "/veiculos/documentos-crlve-pa",
-      description: "Issuing CRLVe (PA)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pa",
+      path: "/veiculos/documentos-CRLV-e-pa",
+      description: "Issuing CRLV-e (PA)",
       params: [
         {
           name: "placa",
@@ -2504,9 +2504,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PB)",
-      value: "veiculos_documentos_emissao_de_crlve_pb",
-      path: "/veiculos/documentos-crlve-pb",
-      description: "Issuing CRLVe (PB) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pb",
+      path: "/veiculos/documentos-CRLV-e-pb",
+      description: "Issuing CRLV-e (PB)",
       params: [
         {
           name: "placa",
@@ -2519,9 +2519,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PE) V3",
-      value: "veiculos_documentos_emissao_de_crlve_pe_v3",
-      path: "/veiculos/documentos-crlve-pe-v3",
-      description: "Issuing CRLV-e (PE) V3 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pe_v3",
+      path: "/veiculos/documentos-CRLV-e-pe-v3",
+      description: "Issuing CRLV-e (PE) V3",
       params: [
         {
           name: "placa",
@@ -2534,9 +2534,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PR) PJ",
-      value: "veiculos_documentos_emissao_de_crlve_pr_pj",
-      path: "/veiculos/documentos-crlve-pr-pj",
-      description: "Issuing CRLVe (PR) - PJ",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pr_pj",
+      path: "/veiculos/documentos-CRLV-e-pr-pj",
+      description: "Issuing CRLV-e (PR) - PJ",
       params: [
         {
           name: "placa",
@@ -2563,8 +2563,8 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PR) V2",
-      value: "veiculos_documentos_emissao_de_crlve_pr_v2",
-      path: "/veiculos/documentos-crlve-pr-v2",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pr_v2",
+      path: "/veiculos/documentos-CRLV-e-pr-v2",
       description: "Issuing CRLV-e (PR) V2",
       params: [
         {
@@ -2585,9 +2585,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (PI)",
-      value: "veiculos_documentos_emissao_de_crlve_pi",
-      path: "/veiculos/documentos-crlve-pi",
-      description: "Issuing CRLVe (PI)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_pi",
+      path: "/veiculos/documentos-CRLV-e-pi",
+      description: "Issuing CRLV-e (PI)",
       params: [
         {
           name: "placa",
@@ -2607,9 +2607,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (RN) V2",
-      value: "veiculos_documentos_emissao_de_crlve_rn_v2",
-      path: "/veiculos/documentos-crlve-rn-v2",
-      description: "Issuing CRLVe (RN) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_rn_v2",
+      path: "/veiculos/documentos-CRLV-e-rn-v2",
+      description: "Issuing CRLV-e (RN) V2",
       params: [
         {
           name: "placa",
@@ -2622,9 +2622,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (RJ) V2",
-      value: "veiculos_documentos_emissao_de_crlve_rj_v2",
-      path: "/veiculos/documentos-crlve-rj-v2",
-      description: "Issuing CRLV-e (RJ) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_rj_v2",
+      path: "/veiculos/documentos-CRLV-e-rj-v2",
+      description: "Issuing CRLV-e (RJ) V2",
       params: [
         {
           name: "placa",
@@ -2637,9 +2637,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (RJ) - Flash",
-      value: "veiculos_documentos_emissao_de_crlve_rj_flash",
-      path: "/veiculos/documentos-crlve-rj-flash",
-      description: "Issuing CRLVe (RJ) - Flash \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_rj_flash",
+      path: "/veiculos/documentos-CRLV-e-rj-flash",
+      description: "Issuing CRLV-e (RJ) - Flash",
       params: [
         {
           name: "placa",
@@ -2652,9 +2652,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (RR)",
-      value: "veiculos_documentos_emissao_de_crlve_rr",
-      path: "/veiculos/documentos-crlve-rr",
-      description: "Issuing CRLVe (RR) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_rr",
+      path: "/veiculos/documentos-CRLV-e-rr",
+      description: "Issuing CRLV-e (RR)",
       params: [
         {
           name: "placa",
@@ -2667,9 +2667,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (RS) V2",
-      value: "veiculos_documentos_emissao_de_crlve_rs_v2",
-      path: "/veiculos/documentos-crlve-rs-v2",
-      description: "Issuing CRLV-e (RS) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_rs_v2",
+      path: "/veiculos/documentos-CRLV-e-rs-v2",
+      description: "Issuing CRLV-e (RS) V2",
       params: [
         {
           name: "placa",
@@ -2682,9 +2682,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (SC) V2",
-      value: "veiculos_documentos_emissao_de_crlve_sc_v2",
-      path: "/veiculos/documentos-crlve-sc-v2",
-      description: "Issuing CRLV-e (SC) V2 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_sc_v2",
+      path: "/veiculos/documentos-CRLV-e-sc-v2",
+      description: "Issuing CRLV-e (SC) V2",
       params: [
         {
           name: "placa",
@@ -2697,9 +2697,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (SE)",
-      value: "veiculos_documentos_emissao_de_crlve_se",
-      path: "/veiculos/documentos-crlve-se",
-      description: "Issuing CRLVe (SE) \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_se",
+      path: "/veiculos/documentos-CRLV-e-se",
+      description: "Issuing CRLV-e (SE)",
       params: [
         {
           name: "placa",
@@ -2712,9 +2712,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (SP) V4",
-      value: "veiculos_documentos_emissao_de_crlve_sp_v4",
-      path: "/veiculos/documentos-crlve-sp-v4",
-      description: "Issuing CRLVe (SP) V4 \\[ASYNC_TASK\\]",
+      value: "veiculos_documentos_emissao_de_CRLV-e_sp_v4",
+      path: "/veiculos/documentos-CRLV-e-sp-v4",
+      description: "Issuing CRLV-e (SP) V4",
       params: [
         {
           name: "placa",
@@ -2741,9 +2741,9 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
     },
     {
       name: "Issuing CRLVe (TO)",
-      value: "veiculos_documentos_emissao_de_crlve_to",
-      path: "/veiculos/documentos-crlve-to",
-      description: "Issuing CRLVe (TO)",
+      value: "veiculos_documentos_emissao_de_CRLV-e_to",
+      path: "/veiculos/documentos-CRLV-e-to",
+      description: "Issuing CRLV-e (TO)",
       params: [
         {
           name: "placa",
@@ -2772,7 +2772,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Communication / Sales communication V2",
       value: "veiculos_documentos_comunicacao_comunicado_de_venda_v2",
       path: "/veiculos/comunicado_venda_v2",
-      description: "Communication / Sales Announcement",
+      description: "Communication / sales announcement",
       params: [
         {
           name: "veiculo[placa]",
@@ -2962,7 +2962,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Cancel Communication / Sales Announcement V2",
       value: "veiculos_documentos_cancelar_comunicacao_comunicado_de_venda_v2",
       path: "/veiculos/cancelar_comunicado_venda_v2",
-      description: "Cancel Communication / Sales Announcement",
+      description: "Cancel communication / sales announcement",
       params: [
         {
           name: "placa",
@@ -3007,7 +3007,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - Active Debt São Paulo",
       value: "veiculos_divida_ativida_consulta_divida_ativa_sao_paulo",
       path: "/dividaativa/sp",
-      description: "Consultation - Active Debt São Paulo|",
+      description: "Consultation - active Debt São paulo",
       params: [
         {
           name: "renavam",
@@ -3022,7 +3022,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - Active Debt Rio de Janeiro",
       value: "veiculos_divida_ativida_consulta_divida_ativa_rio_de_janeiro",
       path: "/dividaativa/rj",
-      description: "Consultation - Active Debt Rio de Janeiro|",
+      description: "Consultation - active Debt Rio de janeiro",
       params: [
         {
           name: "renavam",
@@ -3037,7 +3037,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Consultation - Active Debt Federal District",
       value: "veiculos_divida_ativida_consulta_divida_ativa_distrito_federal",
       path: "/dividaativa/df",
-      description: "Consultation - Active Debt Federal District|",
+      description: "Consultation - active Debt Federal district",
       params: [
         {
           name: "renavam",
@@ -3061,7 +3061,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Simple",
       value: "cnh_nacional_consulta_nacional_simples",
       path: "/cnh/nacional-simples",
-      description: "National Consultation - Simple",
+      description: "National Consultation - simple",
       params: [
         {
           name: "cnh",
@@ -3083,7 +3083,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Complete V2",
       value: "cnh_nacional_consulta_nacional_completa_v2",
       path: "/cnh/nacional-completa-v2",
-      description: "National Consultation - Complete V2",
+      description: "National Consultation - complete V2",
       params: [
         {
           name: "cpf",
@@ -3098,7 +3098,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Complete via CNH V2",
       value: "cnh_nacional_consulta_nacional_completa_via_cnh_v2",
       path: "/cnh/nacional-completa-cnh-v2",
-      description: "National Consultation - Complete via CNH V2",
+      description: "National Consultation - complete via CNH V2",
       params: [
         {
           name: "cnh",
@@ -3113,7 +3113,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Complete V3",
       value: "cnh_nacional_consulta_nacional_completa_v3",
       path: "/cnh/nacional_completa_v3",
-      description: "National Consultation - Complete V3",
+      description: "National Consultation - complete V3",
       params: [
         {
           name: "cpf",
@@ -3128,7 +3128,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Complete V4 (CPF)",
       value: "cnh_nacional_consulta_nacional_completa_v4_cpf",
       path: "/cnh/nacional-completa-v4",
-      description: "National Consultation - Complete V4",
+      description: "National Consultation - complete V4",
       params: [
         {
           name: "cpf",
@@ -3143,7 +3143,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "National Consultation - Simple V2",
       value: "cnh_nacional_consulta_nacional_simples_v2",
       path: "/cnh/nacional-simples-v2",
-      description: "**National Consultation - Simple V2**",
+      description: "**national consultation - simple v2**",
       params: [
         {
           name: "cpf",
@@ -3160,7 +3160,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Full consultation",
       value: "cnh_parana_consulta_completa",
       path: "/cnh/pr-completa",
-      description: "**Full consultation",
+      description: "**full consultation",
       params: [
         {
           name: "cpf",
@@ -3189,7 +3189,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Full consultation V2",
       value: "cnh_parana_consulta_completa_v2",
       path: "/cnh/pr-completa-v2",
-      description: "**Full consultation V2**",
+      description: "**full consultation v2**",
       params: [
         {
           name: "cpf",
@@ -3218,7 +3218,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Cassation",
       value: "cnh_parana_cassacao",
       path: "/cnh/pr-cassacao",
-      description: "Cassation - Paraná|",
+      description: "Cassation - paraná",
       params: [
         {
           name: "data_inicial",
@@ -3288,7 +3288,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Complete Alagoas",
       value: "cnh_alagoas_completa",
       path: "/cnh/al-completa",
-      description: "Complete CNH Consultation - Alagoas",
+      description: "Complete CNH consultation - Alagoas",
       params: [
         {
           name: "cpf",
@@ -3313,7 +3313,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
         },
         {
           name: "uf_nascimento",
-          displayName: "UF Birth",
+          displayName: "Birth UF",
           type: "string",
           required: true,
           placeholder: "XX"
@@ -3321,10 +3321,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "Amazonas complete",
+      name: "Complete Amazonas",
       value: "cnh_amazonas_completa",
       path: "/cnh/am-completa",
-      description: "Complete CNH Consultation - Amazonas",
+      description: "Complete CNH consultation - Amazonas",
       params: [
         {
           name: "cpf",
@@ -3343,10 +3343,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "Amapá complete",
+      name: "Complete Amapá",
       value: "cnh_amapa_completa",
       path: "/cnh/ap-completa",
-      description: "Complete CNH Consultation - Amapá",
+      description: "Complete CNH consultation - Amapá",
       params: [
         {
           name: "cpf",
@@ -3375,7 +3375,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Complete Ceará",
       value: "cnh_ceara_completa",
       path: "/cnh/ce-completa",
-      description: "Complete CNH Consultation - Ceará",
+      description: "Complete CNH consultation - Ceará",
       params: [
         {
           name: "cpf",
@@ -3394,10 +3394,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "Goiás complete",
+      name: "Complete Goiás",
       value: "cnh_goias_completa",
       path: "/cnh/go-completa",
-      description: "Complete CNH Consultation - Goiás",
+      description: "Complete CNH consultation - Goiás",
       params: [
         {
           name: "cnh",
@@ -3409,10 +3409,10 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       ]
     },
     {
-      name: "Maranhão complete",
+      name: "Complete Maranhão",
       value: "cnh_maranhao_completa",
       path: "/cnh/ma-completa",
-      description: "Complete CNH Consultation - Maranhão",
+      description: "Complete CNH consultation - Maranhão",
       params: [
         {
           name: "cpf",
@@ -3434,7 +3434,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Mato Grosso Complete",
       value: "cnh_mato_grosso_completa",
       path: "/cnh/mt-completa",
-      description: "Complete CNH Consultation - Mato Grosso",
+      description: "Complete CNH consultation - Mato Grosso",
       params: [
         {
           name: "cpf",
@@ -3456,7 +3456,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Mato Grosso do Sul Complete",
       value: "cnh_mato_grosso_do_sul_completa",
       path: "/cnh/ms-completa",
-      description: "Complete CNH Consultation - Mato Grosso do Sul",
+      description: "Complete CNH consultation - Mato Grosso do Sul",
       params: [
         {
           name: "cpf",
@@ -3478,7 +3478,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Pará Complete",
       value: "cnh_para_completa",
       path: "/cnh/pa-completa",
-      description: "Complete CNH Consultation - Pará",
+      description: "Complete CNH consultation - Pará",
       params: [
         {
           name: "cpf",
@@ -3500,7 +3500,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Paraíba Complete",
       value: "cnh_paraiba_completa",
       path: "/cnh/pb-completa",
-      description: "Complete CNH Consultation - Paraíba",
+      description: "Complete CNH consultation - Paraíba",
       params: [
         {
           name: "cpf",
@@ -3515,7 +3515,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Rio de Janeiro Complete",
       value: "cnh_rio_de_janeiro_completa",
       path: "/cnh/rj-completa",
-      description: "Complete CNH Consultation - Rio de Janeiro",
+      description: "Complete CNH consultation - Rio de Janeiro",
       params: [
         {
           name: "cpf",
@@ -3537,7 +3537,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Rio Grande do Norte Complete",
       value: "cnh_rio_grande_do_norte_completa",
       path: "/cnh/rn-completa",
-      description: "Complete CNH Consultation - Rio Grande do Norte",
+      description: "Complete CNH consultation - Rio Grande do Norte",
       params: [
         {
           name: "cpf",
@@ -3559,7 +3559,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Sergipe Complete",
       value: "cnh_sergipe_completa",
       path: "/cnh/se-completa",
-      description: "Complete CNH Consultation - Sergipe",
+      description: "Complete CNH consultation - Sergipe",
       params: [
         {
           name: "cnh",
@@ -3588,7 +3588,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Tocantins Complete",
       value: "cnh_tocantins_completa",
       path: "/cnh/to-completa",
-      description: "Complete CNH Consultation - Tocantins",
+      description: "Complete CNH consultation - Tocantins",
       params: [
         {
           name: "cpf",
@@ -3612,7 +3612,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Query Inmetro speedometer calibration data",
       value: "inmetro_consulta_dados_de_afericao_de_medidores_de_velocidade_inmetro",
       path: "/orgaos/medidor-velocidade",
-      description: "Speed Meter Consultation - Inmetro",
+      description: "Speed meter consultation - INMETRO",
       params: [
         {
           name: "numero_inmetro",
@@ -3648,7 +3648,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       params: [
         {
           name: "shortname",
-          displayName: "Shortname",
+          displayName: "Short Name",
           type: "string",
           required: true,
           placeholder: "kabum"
@@ -3663,7 +3663,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       params: [
         {
           name: "shortname",
-          displayName: "Shortname",
+          displayName: "Short Name",
           type: "string",
           required: true,
           placeholder: "kabum"
@@ -3674,7 +3674,7 @@ export const ENDPOINTS: Record<string, EndpointDefinition[]> = {
       name: "Search complaints",
       value: "reclame_aqui_buscar_reclamacoes",
       path: "/reclameaqui/reclamacoes",
-      description: "Search Complaints",
+      description: "Search complaints",
       params: [
         {
           name: "id",
@@ -3738,7 +3738,7 @@ export const CATEGORIES = [
     "value": "Cadastros"
   },
   {
-    "name": "Organs",
+    "name": "Agencies",
     "value": "Orgãos"
   },
   {
@@ -3754,11 +3754,11 @@ export const CATEGORIES = [
     "value": "Veículos > Débitos"
   },
   {
-    "name": "Vehicles > Bodies > ANTT - Dangerous Goods",
+    "name": "Vehicles > Agencies > ANTT - Dangerous Goods",
     "value": "Veículos > Orgãos > ANTT - Prod. Perigosos"
   },
   {
-    "name": "Vehicles > Organs",
+    "name": "Vehicles > Agencies",
     "value": "Veículos > Orgãos"
   },
   {
