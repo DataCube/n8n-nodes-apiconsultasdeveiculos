@@ -244,11 +244,19 @@ function needsTranslation(str) {
 }
 
 // Normalise placeholder: replace Brazilian example domains with generic ones
+// and add "e.g. " prefix following n8n UX guidelines
 function normalisePlaceholder(str) {
   if (!str) return str;
-  return str
+  let normalized = str
     .replace(/https?:\/\/exemplo\.com\.br[^\s]*/gi, 'https://example.com/webhook')
     .replace(/https?:\/\/[a-z0-9.-]*\.com\.br[^\s]*/gi, 'https://example.com/webhook');
+  
+  // Add "e.g. " prefix following n8n UX guidelines
+  if (normalized && !normalized.startsWith('e.g. ')) {
+    normalized = 'e.g. ' + normalized;
+  }
+  
+  return normalized;
 }
 
 // ---------------------------------------------------------------------------

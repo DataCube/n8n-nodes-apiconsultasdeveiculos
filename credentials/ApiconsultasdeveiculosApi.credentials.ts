@@ -4,7 +4,7 @@ import type { IAuthenticateGeneric, ICredentialTestRequest, ICredentialType, INo
 export class ApiconsultasdeveiculosApi implements ICredentialType {
 	name = 'apiconsultasdeveiculosApi';
 
-	displayName = 'Consultas De Veículos API';
+	displayName = 'Consultas de Veículos API';
 
 	documentationUrl = 'https://www.consultasdeveiculos.com/documentation';
 

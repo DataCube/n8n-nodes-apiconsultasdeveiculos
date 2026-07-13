@@ -1,8 +1,8 @@
 {
-	"node": "n8n-nodes-apiconsultasdeveiculos",
+	"node": "n8n-nodes-apiconsultasdeveiculos.apiconsultasdeveiculos",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Development", "Developer Tools"],
+	"categories": ["Development"],
 	"resources": {
 		"credentialDocumentation": [
 			{
